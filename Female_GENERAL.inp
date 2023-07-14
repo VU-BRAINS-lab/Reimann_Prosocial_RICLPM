@@ -1,0 +1,104 @@
+TITLE: GIRL RI-CLPM, 3 waves EXTRACTED FSCORES - General;
+DATA:  FILE is girl_5.24.23.dat;
+
+VARIABLE: NAMES ARE
+subnum_char_b
+src_subject_id
+age_b
+FEMALE_b
+demo_gender_id_v2_b
+PSWEIGHT_b
+FAMID_b
+rel_relationship_b
+demo_prim_b
+siten_b
+white_b
+NHWHITE_b
+AFRICAN_b
+HISPANIC_b
+OTHER_b
+income_b
+income_log_b
+parent_education_b
+mom_education_b
+dad_education_b
+medication_b
+prosocial_q1_p_b
+prosocial_q2_p_b
+prosocial_q3_p_b
+excluded_missing_b
+prosocial_q1_p_1
+prosocial_q2_p_1
+prosocial_q3_p_1
+prosocial_q1_p_2
+prosocial_q2_p_2
+prosocial_q3_p_2
+PMean_b
+PMean_1
+PMean_2
+GB
+EB
+AB
+IB
+G1
+E1
+A1
+I1
+G2
+E2
+A2
+I2;
+
+USEVARIABLES ARE PMean_b PMean_1 PMean_2 GB G1 G2;
+
+MISSING ARE .;
+WEIGHT = PSWEIGHT_b;
+STRATIFICATION=SITEN_b;
+CLUSTER=FAMID_b;
+
+ANALYSIS:
+MODEL = NOCOV; ! Sets all default covariances to zero
+ESTIMATOR=MLR;
+ITERATIONS=500000;
+TYPE = COMPLEX;
+
+MODEL:
+! Create between components (random intercepts)
+RIPTOTAL BY PMean_b@1 PMean_1@1 PMean_2@1;
+RIG BY GB@1 G1@1 G2@1;
+
+
+! Create within-person centered variables
+WGB BY GB@1;
+WG1 BY G1@1;
+WG2 BY G2@1;
+
+WPTOTALB BY PMean_b@1;
+WPTOTAL1 BY PMean_1@1;
+WPTOTAL2 BY PMean_2@1;
+
+! Constrain the measurement error variances to zero
+GB@0; G1@0; G2@0; 
+PMean_b@0; PMean_1@0; PMean_2@0; 
+
+! Estimate the lagged effects between the within-person 
+! centered variables
+WPTOTAL1 WG1 ON WPTOTALB WGB;
+WPTOTAL2 WG2 ON WPTOTAL1 WG1;
+
+
+! Estimate the covariance between the random intercepts
+RIG WITH RIPTOTAL;
+
+! Estimate the covariance between the within-person
+! components at the first wave
+WGB WITH WPTOTALB;
+
+! Estimate the covariances between the residuals of
+! the within-person components
+WG1 WITH WPTOTAL1;
+WG2 WITH WPTOTAL2;
+
+
+OUTPUT: TECH1 STDYX SAMPSTAT CINTERVAL;
+
