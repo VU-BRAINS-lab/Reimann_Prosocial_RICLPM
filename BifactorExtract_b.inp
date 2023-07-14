@@ -1,0 +1,513 @@
+
+TITLE: ABCD Bifactor Baseline;
+DATA:FILE is 
+Prosocial_8.4.22.dat;
+
+VARIABLE: NAMES ARE
+src_subject_id
+subnum_char_b
+age_b
+FEMALE_b
+demo_gender_id_v2_b
+PSWEIGHT_b
+FAMID_b
+rel_relationship_b
+demo_prim_b
+siten_b
+white_b
+NHWHITE_b
+AFRICAN_b
+HISPANIC_b
+OTHER_b
+cbcl_q01_p_b
+cbcl_q02_p_b
+cbcl_q03_p_b
+cbcl_q04_p_b
+cbcl_q05_p_b
+cbcl_q06_p_b
+cbcl_q07_p_b
+cbcl_q08_p_b
+cbcl_q09_p_b
+cbcl_q10_p_b
+cbcl_q11_p_b
+cbcl_q12_p_b
+cbcl_q13_p_b
+cbcl_q14_p_b
+cbcl_q15_p_b
+cbcl_q16_p_b
+cbcl_q17_p_b
+cbcl_q18_p_b
+cbcl_q19_p_b
+cbcl_q20_p_b
+cbcl_q21_p_b
+cbcl_q22_p_b
+cbcl_q23_p_b
+cbcl_q24_p_b
+cbcl_q25_p_b
+cbcl_q26_p_b
+cbcl_q27_p_b
+cbcl_q28_p_b
+cbcl_q29_p_b
+cbcl_q30_p_b
+cbcl_q31_p_b
+cbcl_q32_p_b
+cbcl_q33_p_b
+cbcl_q34_p_b
+cbcl_q35_p_b
+cbcl_q36_p_b
+cbcl_q37_p_b
+cbcl_q38_p_b
+cbcl_q39_p_b
+cbcl_q40_p_b
+cbcl_q41_p_b
+cbcl_q42_p_b
+cbcl_q43_p_b
+cbcl_q44_p_b
+cbcl_q45_p_b
+cbcl_q46_p_b
+cbcl_q47_p_b
+cbcl_q48_p_b
+cbcl_q49_p_b
+cbcl_q50_p_b
+cbcl_q51_p_b
+cbcl_q52_p_b
+cbcl_q53_p_b
+cbcl_q54_p_b
+cbcl_q55_p_b
+cbcl_q56a_p_b
+cbcl_q56b_p_b
+cbcl_q56c_p_b
+cbcl_q56d_p_b
+cbcl_q56e_p_b
+cbcl_q56f_p_b
+cbcl_q56g_p_b
+cbcl_q56h_p_b
+cbcl_q57_p_b
+cbcl_q58_p_b
+cbcl_q59_p_b
+cbcl_q60_p_b
+cbcl_q61_p_b
+cbcl_q62_p_b
+cbcl_q63_p_b
+cbcl_q64_p_b
+cbcl_q65_p_b
+cbcl_q66_p_b
+cbcl_q67_p_b
+cbcl_q68_p_b
+cbcl_q69_p_b
+cbcl_q70_p_b
+cbcl_q71_p_b
+cbcl_q72_p_b
+cbcl_q73_p_b
+cbcl_q74_p_b
+cbcl_q75_p_b
+cbcl_q76_p_b
+cbcl_q77_p_b
+cbcl_q78_p_b
+cbcl_q79_p_b
+cbcl_q80_p_b
+cbcl_q81_p_b
+cbcl_q82_p_b
+cbcl_q83_p_b
+cbcl_q84_p_b
+cbcl_q85_p_b
+cbcl_q86_p_b
+cbcl_q87_p_b
+cbcl_q88_p_b
+cbcl_q89_p_b
+cbcl_q90_p_b
+cbcl_q91_p_b
+cbcl_q92_p_b
+cbcl_q93_p_b
+cbcl_q94_p_b
+cbcl_q95_p_b
+cbcl_q96_p_b
+cbcl_q97_p_b
+cbcl_q98_p_b
+cbcl_q99_p_b
+cbcl_q100_p_b
+cbcl_q101_p_b
+cbcl_q102_p_b
+cbcl_q103_p_b
+cbcl_q104_p_b
+cbcl_q105_p_b
+cbcl_q106_p_b
+cbcl_q107_p_b
+cbcl_q108_p_b
+cbcl_q109_p_b
+cbcl_q110_p_b
+cbcl_q111_p_b
+cbcl_q112_p_b
+ATTEND_b
+DESTROY_b
+income_b
+income_log_b
+parent_education_b
+mom_education_b
+dad_education_b
+medication_b
+prosocial_q1_p_b
+prosocial_q2_p_b
+prosocial_q3_p_b
+excluded_missing_b
+cbcl_q01_p_1
+cbcl_q02_p_1
+cbcl_q03_p_1
+cbcl_q04_p_1
+cbcl_q05_p_1
+cbcl_q06_p_1
+cbcl_q07_p_1
+cbcl_q08_p_1
+cbcl_q09_p_1
+cbcl_q10_p_1
+cbcl_q11_p_1
+cbcl_q12_p_1
+cbcl_q13_p_1
+cbcl_q14_p_1
+cbcl_q15_p_1
+cbcl_q16_p_1
+cbcl_q17_p_1
+cbcl_q18_p_1
+cbcl_q19_p_1
+cbcl_q20_p_1
+cbcl_q21_p_1
+cbcl_q22_p_1
+cbcl_q23_p_1
+cbcl_q24_p_1
+cbcl_q25_p_1
+cbcl_q26_p_1
+cbcl_q27_p_1
+cbcl_q28_p_1
+cbcl_q29_p_1
+cbcl_q30_p_1
+cbcl_q31_p_1
+cbcl_q32_p_1
+cbcl_q33_p_1
+cbcl_q34_p_1
+cbcl_q35_p_1
+cbcl_q36_p_1
+cbcl_q37_p_1
+cbcl_q38_p_1
+cbcl_q39_p_1
+cbcl_q40_p_1
+cbcl_q41_p_1
+cbcl_q42_p_1
+cbcl_q43_p_1
+cbcl_q44_p_1
+cbcl_q45_p_1
+cbcl_q46_p_1
+cbcl_q47_p_1
+cbcl_q48_p_1
+cbcl_q49_p_1
+cbcl_q50_p_1
+cbcl_q51_p_1
+cbcl_q52_p_1
+cbcl_q53_p_1
+cbcl_q54_p_1
+cbcl_q55_p_1
+cbcl_q56a_p_1
+cbcl_q56b_p_1
+cbcl_q56c_p_1
+cbcl_q56d_p_1
+cbcl_q56e_p_1
+cbcl_q56f_p_1
+cbcl_q56g_p_1
+cbcl_q56h_p_1
+cbcl_q57_p_1
+cbcl_q58_p_1
+cbcl_q59_p_1
+cbcl_q60_p_1
+cbcl_q61_p_1
+cbcl_q62_p_1
+cbcl_q63_p_1
+cbcl_q64_p_1
+cbcl_q65_p_1
+cbcl_q66_p_1
+cbcl_q67_p_1
+cbcl_q68_p_1
+cbcl_q69_p_1
+cbcl_q70_p_1
+cbcl_q71_p_1
+cbcl_q72_p_1
+cbcl_q73_p_1
+cbcl_q74_p_1
+cbcl_q75_p_1
+cbcl_q76_p_1
+cbcl_q77_p_1
+cbcl_q78_p_1
+cbcl_q79_p_1
+cbcl_q80_p_1
+cbcl_q81_p_1
+cbcl_q82_p_1
+cbcl_q83_p_1
+cbcl_q84_p_1
+cbcl_q85_p_1
+cbcl_q86_p_1
+cbcl_q87_p_1
+cbcl_q88_p_1
+cbcl_q89_p_1
+cbcl_q90_p_1
+cbcl_q91_p_1
+cbcl_q92_p_1
+cbcl_q93_p_1
+cbcl_q94_p_1
+cbcl_q95_p_1
+cbcl_q96_p_1
+cbcl_q97_p_1
+cbcl_q98_p_1
+cbcl_q99_p_1
+cbcl_q100_p_1
+cbcl_q101_p_1
+cbcl_q102_p_1
+cbcl_q103_p_1
+cbcl_q104_p_1
+cbcl_q105_p_1
+cbcl_q106_p_1
+cbcl_q107_p_1
+cbcl_q108_p_1
+cbcl_q109_p_1
+cbcl_q110_p_1
+cbcl_q111_p_1
+cbcl_q112_p_1
+ATTEND_1
+DESTROY_1
+prosocial_q1_p_1
+prosocial_q2_p_1
+prosocial_q3_p_1
+cbcl_q01_p_2
+cbcl_q02_p_2
+cbcl_q03_p_2
+cbcl_q04_p_2
+cbcl_q05_p_2
+cbcl_q06_p_2
+cbcl_q07_p_2
+cbcl_q08_p_2
+cbcl_q09_p_2
+cbcl_q10_p_2
+cbcl_q11_p_2
+cbcl_q12_p_2
+cbcl_q13_p_2
+cbcl_q14_p_2
+cbcl_q15_p_2
+cbcl_q16_p_2
+cbcl_q17_p_2
+cbcl_q18_p_2
+cbcl_q19_p_2
+cbcl_q20_p_2
+cbcl_q21_p_2
+cbcl_q22_p_2
+cbcl_q23_p_2
+cbcl_q24_p_2
+cbcl_q25_p_2
+cbcl_q26_p_2
+cbcl_q27_p_2
+cbcl_q28_p_2
+cbcl_q29_p_2
+cbcl_q30_p_2
+cbcl_q31_p_2
+cbcl_q32_p_2
+cbcl_q33_p_2
+cbcl_q34_p_2
+cbcl_q35_p_2
+cbcl_q36_p_2
+cbcl_q37_p_2
+cbcl_q38_p_2
+cbcl_q39_p_2
+cbcl_q40_p_2
+cbcl_q41_p_2
+cbcl_q42_p_2
+cbcl_q43_p_2
+cbcl_q44_p_2
+cbcl_q45_p_2
+cbcl_q46_p_2
+cbcl_q47_p_2
+cbcl_q48_p_2
+cbcl_q49_p_2
+cbcl_q50_p_2
+cbcl_q51_p_2
+cbcl_q52_p_2
+cbcl_q53_p_2
+cbcl_q54_p_2
+cbcl_q55_p_2
+cbcl_q56a_p_2
+cbcl_q56b_p_2
+cbcl_q56c_p_2
+cbcl_q56d_p_2
+cbcl_q56e_p_2
+cbcl_q56f_p_2
+cbcl_q56g_p_2
+cbcl_q56h_p_2
+cbcl_q57_p_2
+cbcl_q58_p_2
+cbcl_q59_p_2
+cbcl_q60_p_2
+cbcl_q61_p_2
+cbcl_q62_p_2
+cbcl_q63_p_2
+cbcl_q64_p_2
+cbcl_q65_p_2
+cbcl_q66_p_2
+cbcl_q67_p_2
+cbcl_q68_p_2
+cbcl_q69_p_2
+cbcl_q70_p_2
+cbcl_q71_p_2
+cbcl_q72_p_2
+cbcl_q73_p_2
+cbcl_q74_p_2
+cbcl_q75_p_2
+cbcl_q76_p_2
+cbcl_q77_p_2
+cbcl_q78_p_2
+cbcl_q79_p_2
+cbcl_q80_p_2
+cbcl_q81_p_2
+cbcl_q82_p_2
+cbcl_q83_p_2
+cbcl_q84_p_2
+cbcl_q85_p_2
+cbcl_q86_p_2
+cbcl_q87_p_2
+cbcl_q88_p_2
+cbcl_q89_p_2
+cbcl_q90_p_2
+cbcl_q91_p_2
+cbcl_q92_p_2
+cbcl_q93_p_2
+cbcl_q94_p_2
+cbcl_q95_p_2
+cbcl_q96_p_2
+cbcl_q97_p_2
+cbcl_q98_p_2
+cbcl_q99_p_2
+cbcl_q100_p_2
+cbcl_q101_p_2
+cbcl_q102_p_2
+cbcl_q103_p_2
+cbcl_q104_p_2
+cbcl_q105_p_2
+cbcl_q106_p_2
+cbcl_q107_p_2
+cbcl_q108_p_2
+cbcl_q109_p_2
+cbcl_q110_p_2
+cbcl_q111_p_2
+cbcl_q112_p_2
+ATTEND_2
+DESTROY_2
+prosocial_q1_p_2
+prosocial_q2_p_2
+prosocial_q3_p_2
+PMean_b
+PMean_y1
+PMean_y2
+;
+
+
+USEVARIABLES ARE 
+cbcl_q01_p_b cbcl_q03_p_b cbcl_q04_p_b
+cbcl_q07_p_b cbcl_q09_p_b cbcl_q10_p_b
+cbcl_q13_p_b cbcl_q15_p_b cbcl_q16_p_b
+cbcl_q17_p_b cbcl_q19_p_b cbcl_q22_p_b cbcl_q23_p_b
+cbcl_q25_p_b cbcl_q26_p_b cbcl_q27_p_b cbcl_q28_p_b
+cbcl_q30_p_b cbcl_q31_p_b cbcl_q32_p_b cbcl_q33_p_b cbcl_q34_p_b
+cbcl_q35_p_b cbcl_q37_p_b cbcl_q39_p_b cbcl_q41_p_b
+cbcl_q43_p_b cbcl_q46_p_b
+cbcl_q50_p_b cbcl_q51_p_b cbcl_q52_p_b cbcl_q56a_p_b
+cbcl_q56b_p_b cbcl_q56c_p_b cbcl_q56f_p_b cbcl_q56g_p_b
+cbcl_q57_p_b cbcl_q61_p_b cbcl_q62_p_b cbcl_q66_p_b cbcl_q68_p_b
+cbcl_q71_p_b cbcl_q72_p_b cbcl_q74_p_b cbcl_q75_p_b
+cbcl_q80_p_b cbcl_q81_p_b cbcl_q82_p_b cbcl_q84_p_b
+cbcl_q85_p_b cbcl_q86_p_b cbcl_q87_p_b cbcl_q88_p_b cbcl_q89_p_b
+cbcl_q90_p_b cbcl_q94_p_b
+cbcl_q95_p_b cbcl_q97_p_b cbcl_q102_p_b cbcl_q103_p_b
+cbcl_q106_p_b cbcl_q109_p_b cbcl_q111_p_b cbcl_q112_p_b
+ATTEND_b DESTROY_b;
+
+CATEGORICAL ARE
+cbcl_q01_p_b cbcl_q03_p_b cbcl_q04_p_b
+cbcl_q07_p_b cbcl_q09_p_b cbcl_q10_p_b
+cbcl_q13_p_b cbcl_q15_p_b cbcl_q16_p_b
+cbcl_q17_p_b cbcl_q19_p_b cbcl_q22_p_b cbcl_q23_p_b
+cbcl_q25_p_b cbcl_q26_p_b cbcl_q27_p_b cbcl_q28_p_b
+cbcl_q30_p_b cbcl_q31_p_b cbcl_q32_p_b cbcl_q33_p_b cbcl_q34_p_b
+cbcl_q35_p_b cbcl_q37_p_b cbcl_q39_p_b cbcl_q41_p_b
+cbcl_q43_p_b cbcl_q46_p_b
+cbcl_q50_p_b cbcl_q51_p_b cbcl_q52_p_b cbcl_q56a_p_b
+cbcl_q56b_p_b cbcl_q56c_p_b cbcl_q56f_p_b cbcl_q56g_p_b
+cbcl_q57_p_b cbcl_q61_p_b cbcl_q62_p_b cbcl_q66_p_b cbcl_q68_p_b
+cbcl_q71_p_b cbcl_q72_p_b cbcl_q74_p_b cbcl_q75_p_b
+cbcl_q80_p_b cbcl_q81_p_b cbcl_q82_p_b cbcl_q84_p_b
+cbcl_q85_p_b cbcl_q86_p_b cbcl_q87_p_b cbcl_q88_p_b cbcl_q89_p_b
+cbcl_q90_p_b cbcl_q94_p_b
+cbcl_q95_p_b cbcl_q97_p_b cbcl_q102_p_b cbcl_q103_p_b
+cbcl_q106_p_b cbcl_q109_p_b cbcl_q111_p_b cbcl_q112_p_b
+ATTEND_b DESTROY_b;
+
+MISSING ARE .;
+WEIGHT = PSWEIGHT_b;
+IDVARIABLE = subnum_char_b;
+STRATIFICATION=siten_b;
+CLUSTER=FAMID_b;
+
+
+ANALYSIS:
+  ESTIMATOR=WLSMV;
+ITERATIONS=500000;
+TYPE = COMPLEX;
+
+MODEL:
+  
+  [GENERALB@0]; [INTB@0]; [EXTB@0]; [ADHDB@0];
+GENERALB@1; INTB@1; EXTB@1; ADHDB@1; 
+
+GENERALB BY cbcl_q01_p_b* cbcl_q03_p_b cbcl_q04_p_b
+cbcl_q07_p_b cbcl_q09_p_b cbcl_q10_p_b
+cbcl_q13_p_b cbcl_q15_p_b cbcl_q16_p_b
+cbcl_q17_p_b cbcl_q19_p_b cbcl_q22_p_b cbcl_q23_p_b
+cbcl_q25_p_b cbcl_q26_p_b cbcl_q27_p_b cbcl_q28_p_b
+cbcl_q30_p_b cbcl_q31_p_b cbcl_q32_p_b cbcl_q33_p_b cbcl_q34_p_b
+cbcl_q35_p_b cbcl_q37_p_b cbcl_q39_p_b cbcl_q41_p_b
+cbcl_q43_p_b cbcl_q46_p_b
+cbcl_q50_p_b cbcl_q51_p_b cbcl_q52_p_b cbcl_q56a_p_b
+cbcl_q56b_p_b cbcl_q56c_p_b cbcl_q56f_p_b cbcl_q56g_p_b
+cbcl_q57_p_b cbcl_q61_p_b cbcl_q62_p_b cbcl_q66_p_b cbcl_q68_p_b
+cbcl_q71_p_b cbcl_q72_p_b cbcl_q74_p_b cbcl_q75_p_b
+cbcl_q80_p_b cbcl_q81_p_b cbcl_q82_p_b cbcl_q84_p_b
+cbcl_q85_p_b cbcl_q86_p_b cbcl_q87_p_b cbcl_q88_p_b cbcl_q89_p_b
+cbcl_q90_p_b cbcl_q94_p_b
+cbcl_q95_p_b cbcl_q97_p_b cbcl_q102_p_b cbcl_q103_p_b
+cbcl_q106_p_b cbcl_q109_p_b cbcl_q111_p_b cbcl_q112_p_b
+ATTEND_b DESTROY_b;
+
+EXTB BY cbcl_q03_p_b* cbcl_q07_p_b cbcl_q15_p_b cbcl_q16_p_b
+cbcl_q19_p_b cbcl_q22_p_b cbcl_q23_p_b
+cbcl_q25_p_b cbcl_q26_p_b cbcl_q27_p_b cbcl_q28_p_b cbcl_q34_p_b
+cbcl_q37_p_b cbcl_q39_p_b
+cbcl_q43_p_b cbcl_q57_p_b cbcl_q68_p_b cbcl_q72_p_b cbcl_q74_p_b
+cbcl_q81_p_b cbcl_q82_p_b cbcl_q86_p_b cbcl_q87_p_b cbcl_q88_p_b
+cbcl_q89_p_b cbcl_q90_p_b cbcl_q94_p_b cbcl_q95_p_b cbcl_q97_p_b
+cbcl_q106_p_b cbcl_q109_p_b DESTROY_b;
+
+ADHDB BY cbcl_q01_p_b* cbcl_q04_p_b cbcl_q09_p_b cbcl_q10_p_b
+cbcl_q13_p_b cbcl_q17_p_b cbcl_q41_p_b cbcl_q46_p_b cbcl_q61_p_b
+cbcl_q62_p_b cbcl_q66_p_b cbcl_q80_p_b cbcl_q84_p_b cbcl_q85_p_b
+ATTEND_b;
+
+INTB BY cbcl_q30_p_b* cbcl_q31_p_b cbcl_q32_p_b cbcl_q33_p_b
+cbcl_q35_p_b cbcl_q50_p_b cbcl_q51_p_b cbcl_q52_p_b
+cbcl_q56a_p_b cbcl_q56B_p_b cbcl_q56C_p_b cbcl_q56F_p_b
+cbcl_q56G_p_b cbcl_q71_p_b cbcl_q75_p_b
+cbcl_q102_p_b cbcl_q103_p_b cbcl_q111_p_b cbcl_q112_p_b;
+
+GENERALB WITH INTB @0;
+GENERALB WITH EXTB @0;
+GENERALB WITH ADHDB @0;
+INTB WITH EXTB @0;
+ADHDB WITH EXTB @0; ADHDB WITH INTB @0;
+
+savedata:
+  FILE IS Bifactor_b.dat;
+SAVE=FSCORES;
+
+OUTPUT: STDYX;

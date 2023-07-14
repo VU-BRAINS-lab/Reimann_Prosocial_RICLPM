@@ -1,0 +1,46 @@
+
+Load data
+```{r}
+new <- readRDS("longitudinal.rds")
+```
+
+
+Verify column names
+```{r}
+
+
+#verify column names
+which(colnames(data.new)=="prosocial_q1_p_b") #143
+which(colnames(data.new)=="prosocial_q2_p_b") #144
+which(colnames(data.new)=="prosocial_q3_p_b") #145
+
+which(colnames(data.new)=="prosocial_q1_p_1") #268
+which(colnames(data.new)=="prosocial_q2_p_1") #269
+which(colnames(data.new)=="prosocial_q3_p_1") #270
+
+which(colnames(data.new)=="prosocial_q1_p_2") #392
+which(colnames(data.new)=="prosocial_q2_p_2") #393
+which(colnames(data.new)=="prosocial_q3_p_2") #394
+
+
+```
+
+Create Prosocial composites
+```{r}
+#Double check variable names 
+names(data.new[c(143:145,268:270,392:394)])
+
+prosocial.dat.b<-data.new[,c(143:145)]
+prosocial.dat.y1<-data.new[,c(268:270)]
+prosocial.dat.y2<-data.new[,c(392:394)]
+
+# PMean = mean of endorsed symptoms
+data.new$PMean.b<-rowMeans(prosocial.dat.b)
+data.new$PMean.y1<-rowMeans(prosocial.dat.y1)
+data.new$PMean.y2<-rowMeans(prosocial.dat.y2)
+
+```
+
+
+
+```

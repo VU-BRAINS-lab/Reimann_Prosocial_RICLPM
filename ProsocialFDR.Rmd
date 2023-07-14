@@ -1,0 +1,144 @@
+
+```{r}
+install.packages('MplusAutomation')
+install.packages('xlsx')
+```
+
+
+```{r}
+library(MplusAutomation)
+library(dplyr)
+library(xlsx)
+```
+
+
+Complete FDR corrections 
+```{r}
+#ATTN: This is based on how variables were named in the scripts of the present study. Double check your naming conventions
+letter = c("G","A","E","I")
+
+for( item in letter){
+  variable1 =paste0("RI",item,".WITH")
+  variable2 = "RIPTOTAL"
+  
+  #Grabs the first letter of the psychopathology dimension for naming purposes
+  if(item == "G"){
+    
+    #Reads model - Change based on your script name if applicable
+    modelResults <- readModels("Basic_General.out") 
+    
+    # read standardized results
+    standardizedResults <- modelResults[["parameters"]][["stdyx.standardized"]]
+    
+    # read the index of regression results (can find in "paramHeader" column ending in ".ON")
+    RI=grep(variable1,standardizedResults$paramHeader)
+    I=grep(variable2, standardizedResults$param)
+    
+    RegI=intersect(RI, I)
+    
+    #create dataframe to store  data
+    General <- data.frame(
+      name = "general",
+      est = standardizedResults$est[RegI],
+      se = standardizedResults$se[RegI],
+      est_se = standardizedResults$est_se[RegI],
+      pval = standardizedResults$pval[RegI],
+      stringsAsFactors = FALSE)
+    
+  }else if (item == "A"){
+    #Reads model
+    modelResults <- readModels("Basic_ADHD.out") 
+    
+    # read standardized results
+    standardizedResults <- modelResults[["parameters"]][["stdyx.standardized"]]
+    
+    # read the index of regression results (can find in "paramHeader" column ending in ".ON")
+    RI=grep(variable1,standardizedResults$paramHeader)
+    I=grep(variable2, standardizedResults$param)
+    
+    RegI=intersect(RI, I)
+    
+    #create dataframe to store  data
+    ADHD <- data.frame(
+      name = "adhd",
+      est = standardizedResults$est[RegI],
+      se = standardizedResults$se[RegI],
+      est_se = standardizedResults$est_se[RegI],
+      pval = standardizedResults$pval[RegI],
+      stringsAsFactors = FALSE)
+    
+    
+    
+  }else if(item == "E"){
+    #Reads model
+    modelResults <- readModels("Basic_Ext.out") 
+    
+    # read standardized results
+    standardizedResults <- modelResults[["parameters"]][["stdyx.standardized"]]
+    
+    # read the index of regression results (can find in "paramHeader" column ending in ".ON")
+    RI=grep(variable1,standardizedResults$paramHeader)
+    I=grep(variable2, standardizedResults$param)
+    
+    RegI=intersect(RI, I)
+    
+    #create dataframe to store  data
+    Ext <- data.frame(
+      name = "ext",
+      est = standardizedResults$est[RegI],
+      se = standardizedResults$se[RegI],
+      est_se = standardizedResults$est_se[RegI],
+      pval = standardizedResults$pval[RegI],
+      stringsAsFactors = FALSE)
+    
+  }else if (item == "I"){
+    
+    #Reads model
+    modelResults <- readModels("Basic_Int.out") 
+    
+    # read standardized results
+    standardizedResults <- modelResults[["parameters"]][["stdyx.standardized"]]
+    
+    # read the index of regression results (can find in "paramHeader" column ending in ".ON")
+    RI=grep(variable1,standardizedResults$paramHeader)
+    I=grep(variable2, standardizedResults$param)
+    
+    RegI=intersect(RI, I)
+    
+    #create dataframe to store  data
+    Int <- data.frame(
+      name = "int",
+      est = standardizedResults$est[RegI],
+      se = standardizedResults$se[RegI],
+      est_se = standardizedResults$est_se[RegI],
+      pval = standardizedResults$pval[RegI],
+      stringsAsFactors = FALSE)
+    
+  }
+}
+
+all <- rbind(General,ADHD, Ext,Int)
+all.p <- unlist(all[5])
+all[6] <- round(p.adjust(all.p, method="fdr"),3)
+
+colnames(all)[6] <- c("p_fdr")
+
+
+df.RIX.WITH.RIPTOTAL <- all
+
+
+
+```
+
+
+Repeat for all (X is a placeholder for variable names corresponding to the four dimension, in our case G,A,E,I)
+RI WITH RIPTotal - Between persons psychopathology and prosociality
+WXB.WITH WPTOTALB - Within Persons psychopathology and prosociality
+WX1.ON WXB -  psychopathology baseline to psychopathology year 1
+WX2.ON WX1  -  psychopathology year 1 to psychopathology year 2
+WPTOTAL1.ON WPTOTALB - prosocial baseline to prosocial year 1
+WPTOTAL2.ON WPTOTAL1 - prosocial year 1 to prosocial year 2
+WX1.ON WPTOTALB - cross lagged prosocial baseline to psychopathology year 1
+WX2.ON WPTOTAL1 - cross lagged prosocial year 1 to psychopathlogy year 2 
+WPTOTAL1.ON WXB - cross lagged psychopathology baseline to prosocial year 1
+WPTOTAL2.ON WX1 - cross lagged psychopathology year 1 to prosocial year 2
